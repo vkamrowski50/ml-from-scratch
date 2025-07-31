@@ -3,8 +3,9 @@ class LinearRegression():
     def __init__(self):
         self.inputs = []
         self.outputs = []
-        self.slope = 0
-        self.y_intercept = 0
+        self.m = 0 #slope
+        self.b = 0 #y-intercept
+        self.length = 0
     
     def start_interface(self):
         while True:
@@ -25,23 +26,24 @@ class LinearRegression():
                     self.inputs.append(x)
                     self.outputs.append(y)
                     print("Values inputted into data set")
+                    self.length += 1
                 except:
                     print("Invalid format. Must be 'x,y' with both as ints.")
 
             elif choice == 2:
-                
+                pass
                 #implement gradient descent
 
             elif choice == 3:
                 try:
                     x_value = int(input("Enter an int in form 'x': "))
-                    predicted_value = self.slope * x_value + self.y_intercept
+                    predicted_value = self.m * x_value + self.b
                     print(f"Predicted output: {predicted_value}")
                 except:
                     print("Invalid input, must be an int.")
 
             elif choice == 4:
-                print(f"Current linear equation: y = {self.slope}x + {self.y_intercept}")
+                print(f"Current linear equation: y = {self.m}x + {self.b}")
             
             elif choice == 5:
                 print("Exiting...")
@@ -49,3 +51,9 @@ class LinearRegression():
             
             else:
                 print("Invalid choice. Enter a number from 1 to 5")
+
+    def partial_derivative_mse_respect_to_m(self,):
+
+
+    def run_gradient_descent(self, epochs=1000, learning_rate=0.01):
+        for i in range(epochs):
