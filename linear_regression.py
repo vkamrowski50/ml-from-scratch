@@ -31,9 +31,13 @@ class LinearRegression():
                     print("Invalid format. Must be 'x,y' with both as ints.")
 
             elif choice == 2:
-                pass
-                #implement gradient descent
-
+                try:
+                    epochs, learning_rate = input("Input the amount of gradient descent trails to run (epochs, int) and at what learning rate (float) in form 'epochs,learning_rate").split(",")
+                    epochs = int(epochs)
+                    learning_rate = float(learning_rate)
+                    self.run_gradient_descent(epochs,learning_rate)
+                except:
+                    print("Invalid format. Must be 'epochs,learning_rate' with epochs as int and learning_rate as float")
             elif choice == 3:
                 try:
                     x_value = int(input("Enter an int in form 'x': "))
@@ -68,3 +72,5 @@ class LinearRegression():
     
     def run_gradient_descent(self, epochs=1000, learning_rate=0.01):
         for i in range(epochs):
+            self.m -= self.partial_derivative_mse_respect_to_m() * learning_rate
+            self.b -= self.partial_derivative_mse_respect_to_b() * learning_rate
