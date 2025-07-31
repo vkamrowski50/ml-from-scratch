@@ -5,7 +5,7 @@ class LinearRegression():
         self.outputs = []
         self.m = 0 #slope
         self.b = 0 #y-intercept
-        self.length = 0
+        self.points = 0 # amount of points
     
     def start_interface(self):
         while True:
@@ -26,7 +26,7 @@ class LinearRegression():
                     self.inputs.append(x)
                     self.outputs.append(y)
                     print("Values inputted into data set")
-                    self.length += 1
+                    self.points += 1
                 except:
                     print("Invalid format. Must be 'x,y' with both as ints.")
 
@@ -52,8 +52,19 @@ class LinearRegression():
             else:
                 print("Invalid choice. Enter a number from 1 to 5")
 
-    def partial_derivative_mse_respect_to_m(self,):
+    def partial_derivative_mse_respect_to_m(self):
+        gradient = 0
+        for x,y in zip(self.inputs,self.outputs):
+            gradient += x * (y - (self.m * x + self.b))
+        gradient *= -2 / self.points
+        return gradient
 
-
+    def partial_derivative_mse_respect_to_b(self):
+        gradient = 0
+        for x,y in zip(self.inputs,self.outputs):
+            gradient += y - (self.m * x + self.b)
+        gradient *= -2 / self.points
+        return gradient
+    
     def run_gradient_descent(self, epochs=1000, learning_rate=0.01):
         for i in range(epochs):
