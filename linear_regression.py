@@ -36,6 +36,7 @@ class LinearRegression():
                     epochs = int(epochs)
                     learning_rate = float(learning_rate)
                     self.run_gradient_descent(epochs,learning_rate)
+                    print(f"Training done. New equation is: y = {self.m}x + {self.b}")
                 except:
                     print("Invalid format. Must be 'epochs,learning_rate' with epochs as int and learning_rate as float")
             elif choice == 3:
@@ -71,6 +72,7 @@ class LinearRegression():
         return gradient
     
     def run_gradient_descent(self, epochs=1000, learning_rate=0.01):
+        # add initial mse and final to see how much has changed
         for i in range(epochs):
             self.m -= self.partial_derivative_mse_respect_to_m() * learning_rate
             self.b -= self.partial_derivative_mse_respect_to_b() * learning_rate
