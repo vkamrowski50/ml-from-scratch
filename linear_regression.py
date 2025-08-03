@@ -32,7 +32,7 @@ class LinearRegression():
 
             elif choice == 2:
                 try:
-                    epochs, learning_rate = input("Input the amount of gradient descent trails to run (epochs, int) and at what learning rate (float) in form 'epochs,learning_rate").split(",")
+                    epochs, learning_rate = input("Input the amount of gradient descent trials to run (epochs, int) and at what learning rate (float) in form 'epochs,learning_rate").split(",")
                     epochs = int(epochs)
                     learning_rate = float(learning_rate)
                     self.run_gradient_descent(epochs,learning_rate)
