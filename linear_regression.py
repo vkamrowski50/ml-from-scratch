@@ -16,7 +16,7 @@ class LinearRegression():
             print("4. View current linear equation")
             print("5. Exit")
 
-            choice = input("Choose (1-5): ")
+            choice = int(input("Choose (1-5): "))
 
             if choice == 1:
                 try:
@@ -32,7 +32,7 @@ class LinearRegression():
 
             elif choice == 2:
                 try:
-                    epochs, learning_rate = input("Input the amount of gradient descent trials to run (epochs, int) and at what learning rate (float) in form 'epochs,learning_rate").split(",")
+                    epochs, learning_rate = input("Input the amount of gradient descent trials to run (epochs, int) and at what learning rate (float) in form 'epochs,learning_rate': ").split(",")
                     epochs = int(epochs)
                     learning_rate = float(learning_rate)
                     self.run_gradient_descent(epochs,learning_rate)
