@@ -1,11 +1,11 @@
 ## ML From Scratch
 
 Self-built machine learning library from the ground up.
-I (**Victor Kamrowski**) started this project to deepen my understanding of ML algorithms by building them without libraries.
+I (**Victor Kamrowski**) started this project to deepen my understanding of core ML algorithms by implementing them without any libraries.
 
 ## Features
 
-- Linear Regression model
+- **Linear Regression**
     - Gradient descent training
     - Manual data entry through CLI
     - Prediction and model display
@@ -30,4 +30,12 @@ Options:
 
 ## Future Plans
 
-tba
+- Add cost function display (MSE)
+- Batch data input
+- More models (logistic regression, k-NN, etc.)
+- Visualization (e.g. matplotlib)
+- Unit tests, CLI enhancement
+
+## Motivation
+
+I started this project to get a foundational understanding of machine learning. I learned the proper math (gradients, partial derivatives, etc.) and mechanics of ML algorithms (MSE, minimizing MSE by taking the partial derivative with respect to both slope and y-intercept variables, etc.). I did this so I could internalize the basic principles, not just implement them. To stengthen my theoretical foundation, I've been reading **Introduction to Probability** by **Joseph K. Blitzstein** and **Jessica Hwang** for future endeavors relating to probability computing.
